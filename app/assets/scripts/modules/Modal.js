@@ -2,12 +2,11 @@ class Modal {
   constructor() {
     this.injectHTML()
     this.modal = document.querySelector(".modal")
-    this.closeIcon = document.querySelector(".modal__close")    
+    this.closeIcon = document.querySelector(".modal__close")
     this.events()
   }
 
   events() {
-    
     // listen for close click
     this.closeIcon.addEventListener("click", () => this.closeTheModal())
 
@@ -21,7 +20,7 @@ class Modal {
     }
   }
 
-  openTheModal() {    
+  openTheModal() {
     this.modal.classList.add("modal--is-visible")
   }
 

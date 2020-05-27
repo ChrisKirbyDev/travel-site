@@ -3,7 +3,6 @@ import 'lazysizes'
 import MobileMenu from './modules/MobileMenu'
 import RevealOnScroll from './modules/RevealOnScroll'
 import StickyHeader from './modules/StickyHeader'
-import Modal from './modules/Modal'
 
 new StickyHeader()
 new RevealOnScroll(document.querySelectorAll(".feature-item"), 75)
@@ -17,11 +16,11 @@ document.querySelectorAll(".open-modal").forEach(el => {
     if (typeof modal == "undefined") {
       import(/* webpackChunkName: "modal" */ './modules/Modal').then(x => {
         modal = new x.default()
-        setTimeout(() => Modal.openTheModal(), 20)
-      }).catch(() => console.log("There was a problem."));
+        setTimeout(() => modal.openTheModal(), 20)
+      }).catch(() => console.log("There was a problem."))
     } else {
       modal.openTheModal()
-    }  
+    }
   })
 })
 
